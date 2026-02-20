@@ -1,0 +1,74 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+.sudoku-container {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    gap: 2px;
+    margin: 20px auto;
+    width: fit-content;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+.fixed {
+    background-color: #d1e7dd;
+    font-weight: bold;
+    color: #0a3622;
+}
+.invalid {
+    background-color: #f8d7da;
+}
+.buttons {
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    opacity: 0.8;
+}
+.success {
+    color: green;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.failure {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.solve-btn {
+    background-color: #198754;
+    color: white;
+}
+.reset-btn {
+    background-color: #dc3545;
+    color: white;
+}
+.submit-btn {
+    background-color: #0d6efd;
+    color: white;
+}
