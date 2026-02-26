@@ -129,27 +129,10 @@ function startGame() {
     createBoard();
     startTimer(); // Start the timer when the game begins
 }
-function valentinesSpecial() {
-    board = [
-        [0, 0, 0, 3, 0, 0, 0, 0, 1],
-        [0, 1, 0, 0, 2, 0, 3, 0, 0],
-        [2, 0, 3, 0, 0, 4, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0, 2, 0],
-        [0, 4, 0, 0, 0, 0, 0, 1, 0],
-        [0, 2, 0, 0, 0, 3, 0, 0, 0],
-        [0, 0, 0, 4, 0, 0, 1, 0, 2],
-        [0, 0, 1, 0, 3, 0, 0, 4, 0],
-        [4, 0, 0, 0, 0, 2, 0, 0, 0]
-    ];
-    document.getElementById("sudoku-board").style.backgroundColor = "pink";
-    document.getElementById("sudoku-board").style.backgroundImage = "url('https://www.transparenttextures.com/patterns/hearts.png')";
-    createBoard();
-    startGame();
-}
-
 
 document.querySelector(".solve-btn").textContent = "Give Up";
 document.querySelector(".solve-btn").addEventListener("click", giveUp);
+
 // Show Sudoku title animation
 window.onload = function() {
     let body = document.body;
@@ -178,16 +161,34 @@ window.onload = function() {
         let menu = document.createElement("div");
         menu.id = "menu";
         menu.style.textAlign = "center";
-        
-        let valentineBtn = document.createElement("button");
-        valentineBtn.textContent = "Valentine's Day Special";
-        valentineBtn.onclick = valentinesSpecial;
+        menu.style.position = "absolute";
+        menu.style.top = "50%";
+        menu.style.left = "50%";
+        menu.style.transform = "translate(-50%, -50%)";
         
         let startBtn = document.createElement("button");
-        startBtn.textContent = "Start Game";
+        startBtn.textContent = "🎮 Start Game 🎮";
+        startBtn.style.margin = "10px";
+        startBtn.style.padding = "15px 30px";
+        startBtn.style.fontSize = "18px";
+        startBtn.style.fontWeight = "bold";
+        startBtn.style.border = "none";
+        startBtn.style.borderRadius = "25px";
+        startBtn.style.background = "linear-gradient(45deg, #4CAF50, #45a049, #66bb6a)";
+        startBtn.style.color = "white";
+        startBtn.style.cursor = "pointer";
+        startBtn.style.boxShadow = "0 4px 15px rgba(76, 175, 80, 0.4)";
+        startBtn.style.transition = "transform 0.3s, box-shadow 0.3s";
+        startBtn.onmouseover = function() {
+            this.style.transform = "scale(1.05)";
+            this.style.boxShadow = "0 6px 20px rgba(76, 175, 80, 0.6)";
+        };
+        startBtn.onmouseout = function() {
+            this.style.transform = "scale(1)";
+            this.style.boxShadow = "0 4px 15px rgba(76, 175, 80, 0.4)";
+        };
         startBtn.onclick = startGame;
         
-        menu.appendChild(valentineBtn);
         menu.appendChild(startBtn);
         body.appendChild(menu);
     }, 4500);
